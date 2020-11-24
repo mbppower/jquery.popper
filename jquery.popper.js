@@ -17,11 +17,18 @@
     this.popperInstance = null;
     this.button = el.querySelector(".popper-toggle");
     this.tooltip = el.querySelector(".popper-menu");
+    this.arrow = el.querySelector(".popper-arrow");
 
     this.create = function () {
         _t.destroy();
         _t.popperInstance = Popper.createPopper(_t.button, _t.tooltip, {
             modifiers: [
+                {
+                    name: 'arrow',
+                    options: {
+                        element: arrow,
+                    },
+                },
                 {
                     name: 'offset',
                     options: {
@@ -39,11 +46,19 @@
         }
     }
 
+    this.keyup = function (e) {
+        if (e.key === "Escape") { //keycode 27
+            _t.hide();
+        }
+    }
+
     this.show = function () {
         if (_t.tooltip.hasAttribute('data-show')) return;
 
         _t.create();
         _t.tooltip.setAttribute('data-show', '');
+
+        document.addEventListener('keyup', _t.keyup);
 
         setTimeout(function () { 
             document.body.addEventListener('click', _t.hide);
@@ -57,6 +72,7 @@
         _t.tooltip.removeAttribute('data-show');
         _t.destroy();
 
+        document.removeEventListener('keyup', _t.keyup);
         document.body.removeEventListener('click', _t.hide);
         _t.tooltip.removeEventListener('click', _t.stopClickPropagation);
     }

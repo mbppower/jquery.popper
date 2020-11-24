@@ -16,4 +16,13 @@ Popperjs based tooltip
         });
     </script>
     
+    
+    <fieldset class="popper form-group"><legend>Toggle Info</legend>
+        <button id="btnToggleInfo" class="btn btn-primary popper-toggle" type="button" aria-haspopup="true" aria-expanded="false">Toggle</span</button>
+        <div class="popper-menu" aria-labelledby="btnToggleInfo">
+            <!-- contents -->
+        </div>
+    </fieldset>
+    
+    
 > https://popper.js.org/

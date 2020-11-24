@@ -1,0 +1,37 @@
+
+.popper-menu {
+    border: medium none;
+    border-radius: 3px;
+    box-shadow: 0 0 3px rgba(86, 96, 117, 0.7);
+    display: none;
+    font-size: 12px;
+    list-style: none outside none;
+    padding: 0;
+    text-shadow: none;
+    background: #fff;
+    box-sizing:content-box;
+    padding:15px;
+    width:calc(100% - 60px);
+    z-index:1000;
+}
+
+.popper-menu[data-show] {
+    display: block;
+}
+
+.popper button.form-control {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.popper-menu:after {
+    position: absolute;
+    top: -6px;
+    left: 10px;
+    display: inline-block;
+    border-right: 6px solid transparent;
+    border-bottom: 6px solid #fff;
+    border-left: 6px solid transparent;
+    content: '';
+}

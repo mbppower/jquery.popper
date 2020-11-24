@@ -1,6 +1,6 @@
 /* ========================================================================
  * Marcel Barbosa Pinto 
- * marcel.power@gmail.com
+ * https://github.com/mbppower/jquery.popper
  * ========================================================================
  * Popper.js is required: <script src="https://unpkg.com/@popperjs/core@2"></script>
  * ========================================================================
